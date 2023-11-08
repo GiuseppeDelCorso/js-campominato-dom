@@ -61,9 +61,13 @@ function grigliaGen(){
         cella.classList.toggle("colorata")
              
         
-        if (nCelle==listaBombe) 
-        {
+        if (listaBombe.includes(nCelle)){
                  console.log("Bomba")
+                 cella.classList.add("coloreBomba");
+                 const gameover = document.createElement("h1")
+                 gameover.classList.add("GameOver")
+                 grid.appendChild(gameover)
+                 gameover.innerHTML =("GameOver")
              }
     
     
@@ -90,6 +94,5 @@ for (let i = 0; i < 16; i++) {
     const numeroCasuale = getRndInteger(1, 100)
     listaBombe[i] = getRndInteger(1, 100)
     console.log(listaBombe)
-    
 }
 
